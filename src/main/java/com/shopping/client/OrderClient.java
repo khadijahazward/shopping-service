@@ -26,6 +26,8 @@ public class OrderClient {
 
         // build the request
         OrderRequest orderRequest = OrderRequest.newBuilder().setUserId(userId).build();
+
+        // response
         OrderResponse orderResponse = orderServiceBlockingStub.getOrderForUser(orderRequest);
         return orderResponse.getOrderList();
     }

@@ -16,8 +16,7 @@ public class UserDao {
         User user = new User();
         try{
             Connection connection = H2DatabaseConnection.getConnectionToDatabase();
-            PreparedStatement query = null;
-            query = connection.prepareStatement("select * from user where username=?");
+            PreparedStatement query = connection.prepareStatement("select * from user where username=?");
             query.setString(1, username);
             ResultSet res = query.executeQuery();
             while(res.next()){

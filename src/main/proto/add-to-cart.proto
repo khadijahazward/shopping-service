@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.shopping.stubs.addtocart;
+
+option java_package = "com.shopping.stubs.addtocart";
+option java_multiple_files = true;
+
+service AddToCartService{
+  rpc isProductAvailable(AddToCartRequest) returns (AddToCartResponse);
+}
+
+message AddToCartRequest{
+  int32 product_id = 1;
+  int32 quantity = 2;
+}
+
+message AddToCartResponse{
+  bool is_available = 1;
+  string message = 2;
+  int32 current_stock = 3;
+}
